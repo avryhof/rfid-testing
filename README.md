@@ -1,0 +1,1 @@
+[https://www.waveshare.com/wiki/PN532_NFC_HAT](https://www.waveshare.com/wiki/PN532_NFC_HAT)
