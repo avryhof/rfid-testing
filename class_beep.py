@@ -1,9 +1,4 @@
-# Generate a 440 Hz square waveform in Pygame by building an array of samples and play
-# it for 5 seconds.  Change the hard-coded 440 to another value to generate a different
-# pitch.
-#
-# Run with the following command:
-#   python pygame-play-tone.py
+import settings
 
 from array import array
 from time import sleep
@@ -31,7 +26,13 @@ class Note(Sound):
 
 
 def beep():
+    if settings.DEBUG:
+        print("Beep!")
     pre_init(44100, -16, 1, 1024)
     pygame.init()
     Note(640).play(-1)
     sleep(0.2)
+
+
+if __name__ == "__main__":
+    beep()
