@@ -33,6 +33,8 @@ class RFIDScanner(object):
         if settings.DEBUG:
             print("Found card with UID: {}".format(uid_string))
 
+        return uid
+
 
 if __name__ == "__main__":
-    RFIDScanner().wait_for_scan()
+    uid = RFIDScanner().wait_for_scan()
