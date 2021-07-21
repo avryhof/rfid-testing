@@ -33,7 +33,7 @@ if __name__ == '__main__':
             # Try again if no card is available.
             if uid is not None:
                 alert.play()
-                print(uid)
+                print(uid.decode())
                 print('Found card with UID:', [hex(i) for i in uid])
 
             else:
