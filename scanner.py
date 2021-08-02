@@ -15,14 +15,14 @@ class RFIDScanner(object):
 
     def __init__(self):
         try:
-            self.scanner = PN532_SPI(debug=settings.DEBUG, reset=20, cs=4)
+            self.scanner = PN532_SPI(debug=settings.PN532_DEBUG, reset=20, cs=4)
         except RuntimeWarning:
             print("Cleaning up GPIO Channels.")
             GPIO.cleanup()
-            self.scanner = PN532_SPI(debug=settings.DEBUG, reset=20, cs=4)
+            self.scanner = PN532_SPI(debug=settings.PN532_DEBUG, reset=20, cs=4)
 
 
-        if settings.DEBUG:
+        if settings.DEBUG or settings.PN532_DEBUG:
             ic, ver, rev, support = self.scanner.get_firmware_version()
             print("Found PN532 with firmware version: {0}.{1}".format(ver, rev))
 
