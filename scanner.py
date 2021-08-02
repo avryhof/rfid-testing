@@ -1,3 +1,4 @@
+import requests
 import RPi.GPIO as GPIO
 
 import settings
