@@ -38,6 +38,8 @@ class RFIDScanner(object):
             print(resp.text)
 
         sleep(0.3)
+        
+        self.wait_for_scan()
 
     def wait_for_scan(self):
         if settings.DEBUG:
