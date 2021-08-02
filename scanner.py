@@ -11,7 +11,7 @@ from pn532 import PN532_SPI
 class RFIDScanner(object):
     scanner = None
 
-    endpoint_url = "http://firefox.vryhof.net/api/catalog/catalog/rfid/"
+    endpoint_url = "https://firefox.vryhof.net/api/catalog/rfid/"
 
     def __init__(self):
         try:
