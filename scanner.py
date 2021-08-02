@@ -11,7 +11,13 @@ class RFIDScanner(object):
     endpoint_url = "http://firefox.vryhof.net/api/catalog/catalog/rfid/"
 
     def __init__(self):
-        self.scanner = PN532_SPI(debug=settings.DEBUG, reset=20, cs=4)
+        try:
+            self.scanner = PN532_SPI(debug=settings.DEBUG, reset=20, cs=4)
+        except RuntimeWarning:
+            print("Cleaning up GPIO Channels.")
+            GPIO.cleanup()
+            self.scanner = PN532_SPI(debug=settings.DEBUG, reset=20, cs=4)
+
 
         if settings.DEBUG:
             ic, ver, rev, support = self.scanner.get_firmware_version()
