@@ -1,3 +1,5 @@
+from time import sleep
+
 import requests
 import RPi.GPIO as GPIO
 
