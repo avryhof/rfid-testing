@@ -4,5 +4,6 @@ pygame
 PyYAML==5.4.1
 rpi==0.0.1
 RPi.GPIO==0.7.0
+requests
 serial==0.0.97
 spidev==3.5
